@@ -1,0 +1,19 @@
+{
+  "name": "social-netword-nosql",
+  "version": "1.0.0",
+  "description": "MongoDB back-end project",
+  "main": "index.js",
+  "scripts": {
+    "test": "no"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BadrAlmadhi/Social-Netword-NoSQL.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BadrAlmadhi/Social-Netword-NoSQL/issues"
+  },
+  "homepage": "https://github.com/BadrAlmadhi/Social-Netword-NoSQL#readme"
+}
