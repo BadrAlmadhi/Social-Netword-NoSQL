@@ -27,7 +27,7 @@ const ThoughtController = {
     async createThought(req, res) {
         try {
             const thought = await Thought.create(req.body);
-            res.status(201).json(thought);
+            res.status(200).json(thought);
         } catch (err) {
             res.status(500).json(err);
         }
