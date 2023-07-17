@@ -1,19 +1,22 @@
 {
   "name": "social-netword-nosql",
   "version": "1.0.0",
-  "description": "MongoDB back-end project",
+  "description": "Mongoose back-end project",
   "main": "index.js",
   "scripts": {
-    "test": "no"
+    "start": "node index.js",
+    "seed": "node/utils/seed"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BadrAlmadhi/Social-Netword-NoSQL.git"
-  },
-  "author": "",
+  "author": "Badr Almadhi",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/BadrAlmadhi/Social-Netword-NoSQL/issues"
   },
-  "homepage": "https://github.com/BadrAlmadhi/Social-Netword-NoSQL#readme"
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
 }
