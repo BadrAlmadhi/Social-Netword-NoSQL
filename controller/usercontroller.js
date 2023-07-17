@@ -39,6 +39,37 @@ const UserController = {
 
     },
 
+    addFriend(req, res) {
+        User.findOneAndUpdate(
+            { _id: req.params.userId },
+            { $addToSet: { friends: req.body.friendId || req.params.friendId } },
+            { new: true }
+        )
+            .then(userData => {
+                if (!userData) {
+                    return res.status(404).json({ message: 'User not found' });
+                }
+                res.json(userData);
+            })
+            .catch((err) => res.status(500).json(err));
+    },
+
+    removeFriend({ params }, res) {
+        User.findOneAndUpdate(
+            { _id: params.userId },
+            { $pull: { friends: params.friendId } },
+            { new: true }
+        )
+            .then(userData =>
+                !userData
+                    ? res
+                        .status(404)
+                        .json({ message: 'User not found' })
+                    : res.json(userData)
+            )
+            .catch((err) => res.status(500).json(err));
+    },
+
 
     // update a user
     updateUser(req, res) {
@@ -53,6 +84,6 @@ const UserController = {
     },
 
 
+};
 
-
-}
+module.exports = UserController;

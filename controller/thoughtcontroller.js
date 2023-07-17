@@ -32,14 +32,16 @@ const ThoughtController = {
             res.status(500).json(err);
         }
     },
-    async createThought(req, res) {
+
+    async deleteThought(req, res) {
         try {
-            const thought = await Thought.create(req.body);
-            res.status(201).json(thought);
+            const thought = await Thought.findByIdAndDelete({ _id: req.params.thoughtId });
+            res.status(200).json(thought);
         } catch (err) {
             res.status(500).json(err);
         }
     },
+
     async updateThoughtById(req, res) {
         try {
             const thought = await Thought.findByIdAndUpdate(req.params.thoughtId, req.body, {
